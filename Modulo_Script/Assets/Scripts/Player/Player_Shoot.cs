@@ -12,7 +12,7 @@ public class Player_Shoot : MonoBehaviour
 
     }
 
-    // se cambio la forma en la que las balas se disparan para que el jugador no llegue a -1 balas. 
+    // se cambio la forma en la que las balas se disparan para que el jugador no llegue a -1 balas con la funcion clamp
 
     void Update()
     {
