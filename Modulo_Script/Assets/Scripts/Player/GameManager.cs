@@ -22,17 +22,26 @@ public class GameManager : MonoBehaviour
     public bool GameOver = false;
     public GameObject Player;
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-    }
+ 
     void Start()
     {
         Bullets = 9;
         PlayerLifes = 100;
+    }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+
+        //Asegurarse que si ya existe el manager, que solo haya una instancia
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
