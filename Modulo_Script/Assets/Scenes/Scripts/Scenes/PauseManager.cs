@@ -13,7 +13,7 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         pausePanel.SetActive(false); // Oculta el panel de pausa al inicio
-        Time.timeScale = 1f; // Asegura que el juego comience sin estar en pausa
+        Time.timeScale = 1f; 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -43,7 +43,7 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    // Método para el botón "Volver al Juego"
+    //"Volver al Juego"
     public void ResumeGame()
     {
         isPaused = false;
@@ -53,14 +53,14 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = false; // Oculta el cursor
     }
 
-    // Método para el botón "Ir al Menú"
+    // "Ir al Menú"
     public void GoToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(0); // Asegúrate de tener la escena de menú en el índice correcto en Build Settings
+        SceneManager.LoadScene(0); 
     }
 
-    // Método para el botón "Reiniciar"
+    // "Reiniciar"
     public void RestartLevel()
     {
         Time.timeScale = 1f;
