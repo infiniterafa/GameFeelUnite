@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class Character_Movement : MonoBehaviour
@@ -11,9 +12,18 @@ public class Character_Movement : MonoBehaviour
     public Transform GroundCheck;
     public float GroundDistance = 0.3f;
     public LayerMask GroundMask;
+    private CameraManager cameraManager;
 
     Vector3 velocity;
     bool IsGrounded;
+
+    private void Start()
+    {
+        cameraManager = CameraManager.Instance;
+
+        if (cameraManager != null ) { 
+        }
+    }
 
     private void Update()
     {
@@ -36,5 +46,13 @@ public class Character_Movement : MonoBehaviour
 
         velocity.y += Gravity * Time.deltaTime;
         CH.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Enemy"))
+        {
+            GameManager.Instance.PlayerLifes -= 15;
+        }
     }
 }
