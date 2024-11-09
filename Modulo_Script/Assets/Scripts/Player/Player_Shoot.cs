@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player_Shoot : MonoBehaviour
 {
     public float Bullets = 9;
+    public ParticleSystem muzzleFlash;
     public
 
     void Start()
@@ -19,6 +20,7 @@ public class Player_Shoot : MonoBehaviour
         RaycastHit hit;
         if (Input.GetMouseButtonDown(0) && GameManager.Instance.Bullets > 0)
         {
+            muzzleFlash.Play();
             GameManager.Instance.Bullets--;
             GameManager.Instance.Bullets = Mathf.Clamp(GameManager.Instance.Bullets, 0, 9);
             GameManager.Instance.AmmoBullets();
