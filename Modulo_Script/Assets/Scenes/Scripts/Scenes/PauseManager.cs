@@ -6,14 +6,23 @@ using UnityEngine.UI;
 
 public class PauseManager : MonoBehaviour
 {
+<<<<<<< Updated upstream
     public GameObject pausePanel; // Asigna el Panel desde el Inspector
+=======
+    public GameObject pausePanel; 
+>>>>>>> Stashed changes
 
     private bool isPaused = false;
 
     void Start()
     {
+<<<<<<< Updated upstream
         pausePanel.SetActive(false); // Oculta el panel de pausa al inicio
         Time.timeScale = 1f; 
+=======
+        pausePanel.SetActive(false); // Oculta el panel 
+        Time.timeScale = 1f; // Asegura que el juego comience sin estar en pausa
+>>>>>>> Stashed changes
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -64,6 +73,10 @@ public class PauseManager : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f;
+<<<<<<< Updated upstream
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Recarga la escena actual
+=======
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+>>>>>>> Stashed changes
     }
 }

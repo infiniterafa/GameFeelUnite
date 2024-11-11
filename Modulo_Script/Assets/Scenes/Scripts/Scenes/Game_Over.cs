@@ -17,4 +17,10 @@ public class Game_Over : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("El juego se ha cerrado.");
+    }
 }
