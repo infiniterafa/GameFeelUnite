@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hols : MonoBehaviour
 {
 
-    int myInt = 9;
+    int myInt = 7;
     // Start is called before the first frame update
     void Start()
     {
