@@ -5,27 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class Victory : MonoBehaviour
 {
-<<<<<<< Updated upstream
+
+     public ParticleSystem fireworksEffect; // Sistema de partículas(Confeti) :D
+     public float fireworksDuration = 5f;   // Duración_segundos 
+
+
     public void Start()
     {
         Cursor.lockState = CursorLockMode.None;
-=======
-    public ParticleSystem fireworksEffect; // Sistema de partículas(Confeti) :D
-    public float fireworksDuration = 5f;   // Duración_segundos 
+        StartCoroutine(PlayFireworks()); 
 
-    private void Start()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        StartCoroutine(PlayFireworks());
->>>>>>> Stashed changes
     }
+
+    //<<<<<<< Updated upstream
+    //    public void Start()
+    //    {
+    //        Cursor.lockState = CursorLockMode.None;
+    //=======
+    //    public ParticleSystem fireworksEffect; // Sistema de partículas(Confeti) :D
+    //    public float fireworksDuration = 5f;   // Duración_segundos 
+
+    //    private void Start()
+    //    {
+    //        Cursor.lockState = CursorLockMode.None;
+    //        StartCoroutine(PlayFireworks());
+    //>>>>>>> Stashed changes
+    //    }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
-<<<<<<< Updated upstream
-=======
+//<<<<<<< Updated upstream
+//=======
 
     private IEnumerator PlayFireworks()
     {
@@ -44,5 +56,5 @@ public class Victory : MonoBehaviour
             fireworksEffect.Stop();
         }
     }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 }

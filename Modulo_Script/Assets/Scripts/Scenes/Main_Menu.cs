@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-<<<<<<< Updated upstream
-
-public class Main_Menu : MonoBehaviour
-{
-=======
 using UnityEngine.UI;
+//<<<<<<< Updated upstream
+
 
 public class Main_Menu : MonoBehaviour
 {
+    //=======
+
+
     public GameObject creditsPanel;
     public GameObject optionsPanel;
     public Light sceneLight;          // Referencia luz
     public AudioSource audioSource;    // Referencia audio
     public Slider lightSlider;         // Slider iluminación
     public Slider soundSlider;         // Slider sonido
-
     private void Start()
     {
         if (sceneLight != null)
@@ -31,19 +30,18 @@ public class Main_Menu : MonoBehaviour
         }
     }
 
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
     public void Play()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-<<<<<<< Updated upstream
-}
-=======
+    //<<<<<<< Updated upstream
+
 
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("El juego se ha cerrado."); 
+        Debug.Log("El juego se ha cerrado.");
     }
 
     public void ShowCredits()
@@ -84,4 +82,8 @@ public class Main_Menu : MonoBehaviour
         }
     }
 }
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
+
+//=======
+
+   
