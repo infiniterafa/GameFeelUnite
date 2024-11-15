@@ -23768,6 +23768,7 @@ MonoBehaviour:
   Keys: 0
   hud: {fileID: 1661154997}
   GameOver: 0
+  Win: 0
   Player: {fileID: 7629870692727029751}
 --- !u!4 &1993601253 stripped
 Transform:

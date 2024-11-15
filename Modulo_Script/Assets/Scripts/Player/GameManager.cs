@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int Keys;
     public HUD hud;
     public bool GameOver = false;
+    public bool Win = false;
     public GameObject Player;
 
  
@@ -62,6 +63,13 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(2);
         }
         LifeHP();
+
+        if (Keys == 21)
+        {
+            Win = true;
+            SceneManager.LoadScene(3);
+        }
+
     }
 
     public void AmmoBullets()
