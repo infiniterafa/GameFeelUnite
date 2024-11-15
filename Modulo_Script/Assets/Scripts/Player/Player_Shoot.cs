@@ -20,7 +20,7 @@ public class Player_Shoot : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if (Input.GetMouseButtonDown(0) && GameManager.Instance.Bullets >= 0)
+        if (Input.GetMouseButtonDown(0) && GameManager.Instance.Bullets > 0)
         {
             muzzleFlash.Play();
             GameManager.Instance.Bullets--;

@@ -3,46 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using DG.Tweening;
 
 public class PauseManager : MonoBehaviour
 {
+<<<<<<< Updated upstream
+    public GameObject pausePanel; // Asigna el Panel desde el Inspector
+=======
+    public GameObject pausePanel; 
+>>>>>>> Stashed changes
 
-
-    private bool pause
-    {
-        get
-        {
-            return _pause;
-        }
-        set
-        {
-            _pause = value;
-            if (_pause)
-            {
-                Time.timeScale = 0;
-                pauseCanvas.DOFade(0.85f, 0.15f).SetUpdate(true);
-            }
-            else
-            {
-                Time.timeScale = 1;
-                pauseCanvas.DOFade(0, 0.15f).SetUpdate(true); ;
-            }
-        }
-    }
-    private bool _pause;
-
-
-    public KeyCode pauseKey;
-    public CanvasGroup pauseCanvas;
-
-
+    private bool isPaused = false;
 
     void Start()
     {
-
-        DontDestroyOnLoad(gameObject);
-        pause = false;
+<<<<<<< Updated upstream
+        pausePanel.SetActive(false); // Oculta el panel de pausa al inicio
+        Time.timeScale = 1f; 
+=======
+        pausePanel.SetActive(false); // Oculta el panel 
+        Time.timeScale = 1f; // Asegura que el juego comience sin estar en pausa
+>>>>>>> Stashed changes
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -55,13 +37,11 @@ public class PauseManager : MonoBehaviour
 
     public void TogglePause()
     {
+        isPaused = !isPaused;
 
-        pause = !pause;
-
-        if (pause)
+        if (isPaused)
         {
-
-
+            pausePanel.SetActive(true);
             Time.timeScale = 0f; // Congela el tiempo
             Cursor.lockState = CursorLockMode.None; // Desbloquea el cursor
             Cursor.visible = true; // Hace visible el cursor
@@ -72,12 +52,11 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    // "Volver al Juego"
+    //"Volver al Juego"
     public void ResumeGame()
     {
-        
-        pause = false;
-
+        isPaused = false;
+        pausePanel.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked; // Bloquea el cursor al reanudar
         Cursor.visible = false; // Oculta el cursor
@@ -86,19 +65,18 @@ public class PauseManager : MonoBehaviour
     // "Ir al Menú"
     public void GoToMenu()
     {
-
-        TogglePause();
-        Cursor.lockState = CursorLockMode.None;
- 
-        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0); 
     }
 
     // "Reiniciar"
     public void RestartLevel()
     {
-
-        TogglePause();
-        Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+<<<<<<< Updated upstream
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Recarga la escena actual
+=======
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+>>>>>>> Stashed changes
     }
 }
