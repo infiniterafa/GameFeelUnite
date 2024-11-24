@@ -12,19 +12,19 @@ public class Hols : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //// Update is called once per frame
+    //void Update()
+    //{
         
-    }
+    //}
 
-    void Jump()
-    {
-        int jumpSpeed = 6;
-    }
+    //void Jump()
+    //{
+    //    int jumpSpeed = 6;
+    //}
 
-    void JumpTimeFunc()
-    {
-        int JumppTime = 9;
-    }
+    //void JumpTimeFunc()
+    //{
+    //    int JumppTime = 9;
+    //}
 }
