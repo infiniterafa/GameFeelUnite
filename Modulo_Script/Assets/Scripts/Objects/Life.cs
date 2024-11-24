@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Life : MonoBehaviour
 {
+    PostProcessingManager postProcessingManager;
+    private float postProcessIntensity = 10;
+    private float postProcessTweenTime = 10f;
+
+    void Start()
+    {
+        postProcessingManager = PostProcessingManager.instance;
+    }
+
     public void OnTriggerEnter(Collider other)
+
     {
         print(other.transform.name);
         if (other.transform.CompareTag("Player"))
@@ -14,6 +24,7 @@ public class Life : MonoBehaviour
                 GameManager.Instance.PlayerLifes += 15;
                 if (GameManager.Instance.PlayerLifes > 100)
                 {
+                    postProcessingManager.TweenVignette(0.5f, 0.2f);
                     GameManager.Instance.PlayerLifes = 100;
                 }
                 GameManager.Instance.LifeHP();
