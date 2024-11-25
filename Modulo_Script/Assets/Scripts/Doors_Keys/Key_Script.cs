@@ -26,7 +26,7 @@ public class Key_Script : MonoBehaviour
             {
                 GameManager.Instance.Keys += 1;
                 GameManager.Instance.KeysCount();
-               // postProcessingManager.TweenVignette(0.5f, 0.2f);
+                postProcessingManager.TweenVignette(0.5f, 0.2f);
             }
             PickKey.Invoke();
         }

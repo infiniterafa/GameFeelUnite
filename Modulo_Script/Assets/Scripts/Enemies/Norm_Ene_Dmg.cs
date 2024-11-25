@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class Norm_Ene_Dmg : MonoBehaviour
 {
-    public CameraManager camManager;
+    private CameraManager camManager;
 
     PostProcessingManager postProcessingManager;
     private float postProcessIntensity = 10;
@@ -18,19 +18,18 @@ public class Norm_Ene_Dmg : MonoBehaviour
 
     void Start()
     {
-       postProcessingManager =   PostProcessingManager.instance; 
+       postProcessingManager =   PostProcessingManager.instance;
+        camManager = CameraManager.Instance;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.CompareTag("Player"))
         {
-            postProcessingManager.TweenVignette(0.5f, 0.2f);
-
-            collision.transform.DOScale(Vector3.zero, 0.15f);
-
+            postProcessingManager?.TweenVignette(0.5f, 0.2f);
             GameManager.Instance.PlayerLifes -= 15;
-            camManager.CustomShake(CustomAmplitude, CustomFrequency, CustomDuration);
+            //camManager.HitShake();
+            Debug.Log($"{transform.name} collided with Player");
         }
     }
 }

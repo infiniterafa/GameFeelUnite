@@ -18,7 +18,10 @@ public class PostProcessingManager : MonoBehaviour
     private Action myAction;
 
 
-      
+    private void Awake()
+    {
+        instance = this; 
+    }
 
     private void Start()
     {

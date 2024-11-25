@@ -50,7 +50,6 @@ public class CameraManager : MonoBehaviour
     }
 
     public void CustomShake(float CustomAmplitude, float CustomFrequency, float CustomDuration)
-
     {
         if (shakecoroutine != null)
         {
