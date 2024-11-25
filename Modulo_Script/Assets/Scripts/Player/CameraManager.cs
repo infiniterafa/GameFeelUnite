@@ -6,11 +6,11 @@ using Cinemachine;
 public class CameraManager : MonoBehaviour
 {
     [Header("HitEnemyShake")]
-    public float HitFrecuency;
-    public float HitAmplitude;
+    public float HitFrecuency = 1.0f;
+    public float HitAmplitude = 1.0f;
 
     [Range(0f, 1f)]
-    public float HitDuration;
+    public float HitDuration = 1.0f;
 
     public CinemachineVirtualCamera VirtualCamera;
     private CinemachineBasicMultiChannelPerlin noise;
@@ -21,7 +21,7 @@ public class CameraManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance = null)
+        if (Instance == null)
         {
             Instance = this;
         }

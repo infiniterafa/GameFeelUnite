@@ -77,6 +77,11 @@ public class PostProcessingManager : MonoBehaviour
         DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, endVale, tweenTime).SetLoops(2, LoopType.Yoyo);
     }
 
+    public void ChangeVignetteColor(Color ColorKey)
+    {
+        vignette.color.value = ColorKey;
+    }
+
     private void GetPostProcessFx()
     {
         volume.profile.TryGet(out chromaticAberration);

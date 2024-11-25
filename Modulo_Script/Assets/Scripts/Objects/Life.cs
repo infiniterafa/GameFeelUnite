@@ -25,6 +25,7 @@ public class Life : MonoBehaviour
                 if (GameManager.Instance.PlayerLifes > 100)
                 {
                     postProcessingManager.TweenVignette(0.5f, 0.2f);
+                    postProcessingManager.ChangeVignetteColor(Color.blue);
                     GameManager.Instance.PlayerLifes = 100;
                 }
                 GameManager.Instance.LifeHP();
