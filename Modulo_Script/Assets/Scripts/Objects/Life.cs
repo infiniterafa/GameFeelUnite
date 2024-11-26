@@ -24,10 +24,11 @@ public class Life : MonoBehaviour
                 GameManager.Instance.PlayerLifes += 15;
                 if (GameManager.Instance.PlayerLifes > 100)
                 {
-                    postProcessingManager.TweenVignette(0.5f, 0.2f);
-                    postProcessingManager.ChangeVignetteColor(Color.blue);
+                
                     GameManager.Instance.PlayerLifes = 100;
                 }
+                postProcessingManager.TweenVignette(0.5f, 0.2f);
+                postProcessingManager.ChangeVignetteColor(Color.green);
                 GameManager.Instance.LifeHP();
             }
             Destroy(this.gameObject);

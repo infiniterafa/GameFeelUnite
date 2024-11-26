@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour
     {
         return Bullets_String;
     }
-    public void KeysCount()
-    {
-        Keys_Text.text = Keys.ToString() + "/20 Keys";
-    }
+    //public void KeysCount()
+    //{
+    //    Keys_Text.text = Keys.ToString() + "/20 Keys";
+    //}
     
     public string KeysString()
     {

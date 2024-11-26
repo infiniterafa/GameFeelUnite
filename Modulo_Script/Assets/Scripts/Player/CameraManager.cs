@@ -6,8 +6,8 @@ using Cinemachine;
 public class CameraManager : MonoBehaviour
 {
     [Header("HitEnemyShake")]
-    public float HitFrecuency = 1.0f;
-    public float HitAmplitude = 1.0f;
+    public float HitFrecuency = 10f;
+    public float HitAmplitude = 10f;
 
     [Range(0f, 1f)]
     public float HitDuration = 1.0f;
@@ -41,6 +41,16 @@ public class CameraManager : MonoBehaviour
         }
 
         shakecoroutine = StartCoroutine(ShakeCoroutine(HitAmplitude, HitFrecuency, HitDuration));
+    }
+
+    public void HitShakeA(float HitAmplitudeA, float HitFrecuencyA, float HitDurationA)
+    {
+        if (shakecoroutine != null)
+        {
+            StopCoroutine(shakecoroutine);
+        }
+
+        shakecoroutine = StartCoroutine(ShakeCoroutine(HitAmplitudeA, HitFrecuencyA, HitDurationA));
     }
 
     private void ShakeReset()

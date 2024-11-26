@@ -25,7 +25,7 @@ public class Key_Script : MonoBehaviour
             if (GameManager.Instance.Keys < 20)
             {
                 GameManager.Instance.Keys += 1;
-                GameManager.Instance.KeysCount();
+                //GameManager.Instance.KeysCount();
                 postProcessingManager.TweenVignette(0.5f, 0.2f);
                 postProcessingManager.ChangeVignetteColor(Color.blue);
             }
