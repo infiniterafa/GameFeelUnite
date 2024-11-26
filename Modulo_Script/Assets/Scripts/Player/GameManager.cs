@@ -56,18 +56,18 @@ public class GameManager : MonoBehaviour
         {
             MaxTime = 0;
             GameOver = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         if (PlayerLifes <= 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         LifeHP();
 
         if (Keys == 21)
         {
             Win = true;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(2);
         }
 
     }
